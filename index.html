@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Time Penalty Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="icon">⚽</div>
+            <h1>Time Penalty Calculator</h1>
+            <p>Football Performance Assessment</p>
+        </header>
+
+        <section class="calculator">
+
+            <h2>Performance Inputs</h2>
+            <p class="subtitle">Enter the raw time and number of errors or bonuses.</p>
+
+            <div class="input-group">
+                <label for="rawTime">Raw Time (seconds)</label>
+                <input type="number" id="rawTime" min="0" step="0.1" value="0">
+            </div>
+
+            <div class="input-grid">
+
+                <div class="input-group">
+                    <label for="missesBench">Misses Bench</label>
+                    <span class="penalty">+5 seconds each</span>
+                    <input type="number" id="missesBench" min="0" step="1" value="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="missesTarget">Misses Target Area</label>
+                    <span class="penalty">+3 seconds each</span>
+                    <input type="number" id="missesTarget" min="0" step="1" value="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="handlingErrors">Handling Errors</label>
+                    <span class="penalty">+3 seconds each</span>
+                    <input type="number" id="handlingErrors" min="0" step="1" value="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="outsidePasses">Outside Passes</label>
+                    <span class="penalty">+2 seconds each</span>
+                    <input type="number" id="outsidePasses" min="0" step="1" value="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="coneTouches">Cone Touches</label>
+                    <span class="penalty">+2 seconds each</span>
+                    <input type="number" id="coneTouches" min="0" step="1" value="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="bonusHits">Bonus Hits</label>
+                    <span class="bonus">-1 second each</span>
+                    <input type="number" id="bonusHits" min="0" step="1" value="0">
+                </div>
+
+            </div>
+
+            <button id="calculateBtn">Calculate Final Time</button>
+            <button id="resetBtn" class="reset-btn">Reset Calculator</button>
+
+        </section>
+
+        <section class="result" id="result" hidden>
+            <p>FINAL ADJUSTED TIME</p>
+            <h2 id="finalTime">0.00 seconds</h2>
+
+            <div class="breakdown">
+                <div>
+                    <span>Raw Time</span>
+                    <strong id="displayRaw">0.00s</strong>
+                </div>
+
+                <div>
+                    <span>Total Penalties</span>
+                    <strong id="displayPenalties">+0.00s</strong>
+                </div>
+
+                <div>
+                    <span>Overtime Penalty</span>
+                    <strong id="displayOvertime">+0.00s</strong>
+                </div>
+
+                <div>
+                    <span>Bonus Reduction</span>
+                    <strong id="displayBonus">-0.00s</strong>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Football Performance Calculator
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
